@@ -36,13 +36,13 @@ export default {
 Developing with serve
 
 ```sh
-npm start # gulp
+npm start
 ```
 
 Production build
 
 ```sh
-npm run build # NODE_ENV=production gulp build
+npm run build
 ```
 
 Serve

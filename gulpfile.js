@@ -1,6 +1,5 @@
 // Gulp
 import gulp from 'gulp';
-const { src, dest, series, parallel, watch } = gulp;
 
 // Tools
 import { deleteAsync } from 'del';
@@ -8,6 +7,7 @@ import debug from 'gulp-debug';
 import flatten from 'gulp-flatten';
 import gulpIf from 'gulp-if';
 import notify from 'gulp-notify';
+import path from 'path';
 
 // CSS
 import autoprefixer from 'autoprefixer';
@@ -31,129 +31,119 @@ import typograf from 'gulp-typograf';
 
 // Browser Sync
 import browserSync from 'browser-sync';
-browserSync.create();
 
 // Config
+// eslint-disable-next-line
 import config from './config.js';
 
+const {
+  src, dest, series, parallel, watch,
+} = gulp;
+browserSync.create();
+
 // NODE_ENV
-const isDevelopment =
-  !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
+const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 // Styles Task
-export const buildStyles = () => {
-  return src(config.blocks + '/*.css', { sourcemaps: isDevelopment })
-    .pipe(
-      postcss(
-        [
-          postcssImport(),
-          postcssSimpleVars(),
-          postcssNested,
-          postcssUrl({
-            url: isDevelopment ? 'copy' : 'inline',
-            maxSize: 14,
-            fallback: 'copy',
-            optimizeSvgEncode: true,
-          }),
-          autoprefixer({
-            add: !isDevelopment,
-          }),
-          postcssReporter(),
-        ],
-        {
-          to: config.dest + '/main.css',
-        }
-      )
-    )
-    .on(
-      'error',
-      notify.onError(function (err) {
-        return {
-          title: 'PostCSS',
-          message: err.message,
-          sound: 'Blow',
-        };
-      })
-    )
-    .pipe(gulpIf(!isDevelopment && config.isStylesMinify, csso()))
-    .pipe(debug({ title: 'buildStyles:' }))
-    .pipe(dest(config.dest, { sourcemaps: isDevelopment }));
-};
+export const buildStyles = () => src(`${config.blocks}/*.css`, { sourcemaps: isDevelopment })
+  .pipe(
+    postcss(
+      [
+        postcssImport(),
+        postcssSimpleVars(),
+        postcssNested,
+        postcssUrl({
+          url: isDevelopment ? 'copy' : 'inline',
+          maxSize: 14,
+          fallback: 'copy',
+          optimizeSvgEncode: true,
+        }),
+        autoprefixer({
+          add: !isDevelopment,
+        }),
+        postcssReporter(),
+      ],
+      {
+        to: `${config.dest}/main.css`,
+      },
+    ),
+  )
+  .on(
+    'error',
+    notify.onError((err) => ({
+      title: 'PostCSS',
+      message: err.message,
+      sound: 'Blow',
+    })),
+  )
+  .pipe(gulpIf(!isDevelopment && config.isStylesMinify, csso()))
+  .pipe(debug({ title: 'buildStyles:' }))
+  .pipe(dest(config.dest, { sourcemaps: isDevelopment }));
 
 // Scripts Task
-export const buildScripts = () => {
-  return src(config.blocks + '/*.js')
-    .pipe(
-      esbuild({
-        sourcemap: isDevelopment,
-        target: 'es2015',
-        bundle: true,
-        minify: !isDevelopment && config.isScriptsMinify,
-        plugins: [
-          {
-            name: 'node-modules-resolution',
-            setup(build) {
-              build.onResolve({ filter: /^\// }, (args) => {
-                const cwd = process.cwd()
-                const newPath = args.path.includes(cwd) ? args.path : path.join(cwd, 'node_modules', args.path)
-                return {
-                  path: newPath,
-                }
-              })
-            },
+export const buildScripts = () => src(`${config.blocks}/*.js`)
+  .pipe(
+    esbuild({
+      sourcemap: isDevelopment,
+      target: 'es2015',
+      bundle: true,
+      minify: !isDevelopment && config.isScriptsMinify,
+      plugins: [
+        {
+          name: 'node-modules-resolution',
+          setup(build) {
+            build.onResolve({ filter: /^\// }, (args) => {
+              const cwd = process.cwd();
+              const newPath = args.path.includes(cwd) ? args.path : path.join(cwd, 'node_modules', args.path);
+              return {
+                path: newPath,
+              };
+            });
           },
-        ],
-      })
-    )
-    .pipe(debug({ title: 'buildScripts:' }))
-    .pipe(dest(config.dest));
-};
+        },
+      ],
+    }),
+  )
+  .pipe(debug({ title: 'buildScripts:' }))
+  .pipe(dest(config.dest));
 
 // HTML Task
-export const buildHtml = () => {
-  return src(config.pages + '/**/*.html')
-    .pipe(
-      nunjucks({
-        searchPaths: ['./'],
-      })
-    )
-    .on(
-      'error',
-      notify.onError(function (err) {
-        return {
-          title: 'Nunjucks',
-          message: err.message,
-          sound: 'Blow',
-        };
-      })
-    )
-    .pipe(gulpIf(config.isTypograf, typograf(config.typografOptions)))
-    .pipe(gulpIf(!isDevelopment, posthtml([posthtmlAltAlways()])))
-    .pipe(
-      gulpIf(
-        !isDevelopment && config.isHtmlMinify,
-        posthtml([posthtmlMinifier(config.htmlMinifyOptions)])
-      )
-    )
-    .pipe(flatten())
-    .pipe(debug({ title: 'buildHtml:' }))
-    .pipe(dest(config.dest));
-};
+export const buildHtml = () => src(`${config.pages}/**/*.html`)
+  .pipe(
+    nunjucks({
+      searchPaths: ['./'],
+    }),
+  )
+  .on(
+    'error',
+    notify.onError((err) => ({
+      title: 'Nunjucks',
+      message: err.message,
+      sound: 'Blow',
+    })),
+  )
+  .pipe(gulpIf(config.isTypograf, typograf(config.typografOptions)))
+  .pipe(gulpIf(!isDevelopment, posthtml([posthtmlAltAlways()])))
+  .pipe(
+    gulpIf(
+      !isDevelopment && config.isHtmlMinify,
+      posthtml([posthtmlMinifier(config.htmlMinifyOptions)]),
+    ),
+  )
+  .pipe(flatten())
+  .pipe(debug({ title: 'buildHtml:' }))
+  .pipe(dest(config.dest));
 
 // Assets Task
-export const buildAssets = () => {
-  return src(config.assets + '/**/*.*')
-    .pipe(debug({ title: 'buildAssets:' }))
-    .pipe(dest(config.dest));
-};
+export const buildAssets = () => src(`${config.assets}/**/*.*`)
+  .pipe(debug({ title: 'buildAssets:' }))
+  .pipe(dest(config.dest));
 
 // Clean Task
-export const clean = () => {
-  return deleteAsync(config.dest + '/*');
-};
+export const clean = () => deleteAsync(`${config.dest}/*`);
 
 // Serve Task
-export const serve = cb => {
+export const serve = (cb) => {
   browserSync.init({
     server: config.dest,
     port: isDevelopment ? 3000 : 8080,
@@ -165,14 +155,14 @@ export const serve = cb => {
 
   browserSync
     .watch([
-      config.dest + '/**/*.*',
-      '!' + config.dest + '/**/*.+(css|css.map)',
+      `${config.dest}/**/*.*`,
+      `!${config.dest}/**/*.+(css|css.map)`,
     ])
     .on('change', browserSync.reload);
 
-  browserSync.watch(config.dest + '/**/*.css', function (event, file) {
+  browserSync.watch(`${config.dest}/**/*.css`, (event) => {
     if (event === 'change') {
-      browserSync.reload(config.dest + '/**/*.css');
+      browserSync.reload(`${config.dest}/**/*.css`);
     }
   });
 
@@ -180,13 +170,13 @@ export const serve = cb => {
 };
 
 // Watch
-export const watcher = cb => {
-  watch(config.blocks + '/**/*.css', buildStyles);
-  watch(config.blocks + '/**/*.js', buildScripts);
-  watch(config.assets + '/**/*.*', buildAssets);
+export const watcher = (cb) => {
+  watch(`${config.blocks}/**/*.css`, buildStyles);
+  watch(`${config.blocks}/**/*.js`, buildScripts);
+  watch(`${config.assets}/**/*.*`, buildAssets);
   watch(
-    [config.pages + '/**/*.html', config.templates + '/**/*.html'],
-    buildHtml
+    [`${config.pages}/**/*.html`, `${config.templates}/**/*.html`],
+    buildHtml,
   );
   cb();
 };
@@ -194,12 +184,12 @@ export const watcher = cb => {
 // Build Task
 export const build = series(
   clean,
-  parallel(buildStyles, buildScripts, buildHtml, buildAssets)
+  parallel(buildStyles, buildScripts, buildHtml, buildAssets),
 );
 
 // Develop Default Task
 export default series(
   clean,
   parallel(buildStyles, buildScripts, buildHtml, buildAssets),
-  parallel(watcher, serve)
+  parallel(watcher, serve),
 );
