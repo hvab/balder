@@ -1,0 +1,8 @@
+:root {
+  --ba-ref-typeface-brand: "Open Sans";
+  --ba-ref-typeface-plain: system-ui;
+}
+
+.page {
+  margin: 0;
+}

@@ -1,0 +1,31 @@
+:root {
+  --ba-container-size-full: 100%;
+  --ba-container-size-m: 1144px;
+  --ba-container-size-s: 880px;
+  --ba-container-size-xs: 560px;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.container_align_center {
+  margin: auto;
+}
+
+.container_size_full {
+  max-width: var(--ba-container-size-full);
+}
+
+.container_size_m {
+  max-width: var(--ba-container-size-m);
+}
+
+.container_size_s {
+  max-width: var(--ba-container-size-s);
+}
+
+.container_size_xs {
+  max-width: var(--ba-container-size-xs);
+}
