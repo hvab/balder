@@ -1,0 +1,17 @@
+:root {
+  --ba-image-shape: 8px;
+}
+
+.image_fluid {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.image_rounded {
+  border-radius: var(--ba-image-shape);
+}
+
+.image_circle {
+  border-radius: 50%;
+}
