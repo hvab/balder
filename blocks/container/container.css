@@ -1,4 +1,5 @@
 :root {
+  /* Container size variables */
   --ba-container-size-full: 100%;
   --ba-container-size-m: 1144px;
   --ba-container-size-s: 880px;

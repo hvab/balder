@@ -1,31 +1,25 @@
 <!doctype html>
 <html lang="ru">
-  {% block page__head %}
 
   <head>
-    {% block page__meta %}
+    {% block head__meta %}
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% endblock page__meta %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% endblock head__meta %}
 
-    {% block page__title %}
+    {% block head__title %}
     <title>
-      {% block page__titleContent %}{% endblock page__titleContent %}
+      {% block head__titleContent %}{% endblock %}
     </title>
-    {% endblock page__title %}
+    {% endblock head__title %}
 
-    {% block page__favicon %}
-    {# {% include "_favicon.html" %} #}
-    {% endblock page__favicon %}
-
-    {% block page__styles %}
+    {% block head__styles %}
     <link rel="stylesheet" href="main.css">
-    {% endblock page__styles %}
+    {% endblock head__styles %}
   </head>
-  {% endblock page__head %}
 
   <body class="page">
-    <div class="container container_align_center container_size_s text text_line-height_m">
+    <div class="container container_align_center container_size_s">
       {% block page__content %}{% endblock page__content %}
     </div>
 

@@ -1,0 +1,12 @@
+Про дизайн-токены МТ3
+https://m3.material.io/foundations/design-tokens/how-to-read-tokens
+
+ref-typeface
+ref-palette
+
+sys-typescale
+sys-state
+sys-shape
+sys-motion
+sys-elevation
+sys-color
