@@ -8,3 +8,17 @@ node_modules
 
 # Distribute directories
 dist
+
+# IDE/Editor config
+.vscode/
+.idea/
+*.code-workspace
+
+# OS files
+.DS_Store
+
+# Gulp cache
+.gulp/
+
+# Env files
+.env
