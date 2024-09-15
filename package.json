@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "start": "gulp",
-    "build": "NODE_ENV=production gulp build"
+    "start": "gulp --gulpfile gulpfile/index.js --cwd ./",
+    "build": "NODE_ENV=production gulp build --gulpfile gulpfile/index.js --cwd ./",
+    "serve": "gulp serve --gulpfile gulpfile/index.js --cwd ./"
   },
-  "devDependencies": {
+  "dependencies": {
+    "dotenv": "^16.4.5",
     "autoprefixer": "^10.4.20",
     "browser-sync": "^3.0.2",
     "del": "^7.1.0",
