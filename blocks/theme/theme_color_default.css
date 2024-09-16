@@ -1,0 +1,46 @@
+@import url("palette.css");
+
+.theme_color_default {
+  /* Primary */
+  --ba-sys-color-primary: var(--ba-ref-palette-primary40);
+  --ba-sys-color-primary-container: var(--ba-ref-palette-primary90);
+  --ba-sys-color-on-primary: var(--ba-ref-palette-primary100);
+  --ba-sys-color-on-primary-container: var(--ba-ref-palette-primary10);
+  --ba-sys-color-inverse-primary: var(--ba-ref-palette-primary80);
+
+  /* Secondary */
+  --ba-sys-color-secondary: var(--ba-ref-palette-secondary40);
+  --ba-sys-color-secondary-container: var(--ba-ref-palette-secondary90);
+  --ba-sys-color-on-secondary: var(--ba-ref-palette-secondary100);
+  --ba-sys-color-on-secondary-container: var(--ba-ref-palette-secondary10);
+
+  /* Tertiary */
+  --ba-sys-color-tertiary: var(--ba-ref-palette-tertiary40);
+  --ba-sys-color-tertiary-container: var(--ba-ref-palette-tertiary90);
+  --ba-sys-color-on-tertiary: var(--ba-ref-palette-tertiary100);
+  --ba-sys-color-on-tertiary-container: var(--ba-ref-palette-tertiary10);
+
+  /* Surface */
+  --ba-sys-color-surface: var(--ba-ref-palette-neutral99);
+  --ba-sys-color-surface-variant: var(--ba-ref-palette-neutral-variant90);
+  --ba-sys-color-on-surface: var(--ba-ref-palette-neutral10);
+  --ba-sys-color-on-surface-variant: var(--ba-ref-palette-neutral-variant30);
+  --ba-sys-color-surface-tint: var(--ba-sys-color-primary);
+  --ba-sys-color-inverse-surface: var(--ba-ref-palette-neutral20);
+  --ba-sys-color-inverse-on-surface: var(--ba-ref-palette-neutral95);
+
+  /* Outline */
+  --ba-sys-color-outline: var(--ba-ref-palette-neutral-variant50);
+
+  /* Shadow */
+  --ba-sys-color-shadow: var(--ba-ref-palette-neutral0);
+
+  /* Error */
+  --ba-sys-color-error: var(--ba-ref-palette-error40);
+  --ba-sys-color-error-container: var(--ba-ref-palette-error90);
+  --ba-sys-color-on-error: var(--ba-ref-palette-error100);
+  --ba-sys-color-on-error-container: var(--ba-ref-palette-error10);
+
+  color: var(--ba-sys-color-on-surface);
+  background-color: var(--ba-sys-color-surface);
+}

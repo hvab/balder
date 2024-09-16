@@ -1,0 +1,13 @@
+.theme_shape_default {
+  --ba-sys-shape-full: 9999px;
+  --ba-sys-shape-extra-large: 28px;
+  --ba-sys-shape-large: 16px;
+  --ba-sys-shape-medium: 12px;
+  --ba-sys-shape-small: 8px;
+  --ba-sys-shape-extra-small: 4px;
+  --ba-sys-shape-none: 0px;
+}
+
+/* .shape-small {
+  border-radius: var(--ba-sys-shape-small);
+} */

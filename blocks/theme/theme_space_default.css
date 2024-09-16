@@ -1,0 +1,18 @@
+.theme_space_default {
+  --ba-sys-space-3xs: 2px;
+  --ba-sys-space-2xs: 4px;
+  --ba-sys-space-xs: 8px;
+  --ba-sys-space-s: 12px;
+  --ba-sys-space-m: 16px;
+  --ba-sys-space-l: 20px;
+  --ba-sys-space-xl: 24px;
+  --ba-sys-space-2xl: 32px;
+  --ba-sys-space-3xl: 40px;
+  --ba-sys-space-4xl: 48px;
+  --ba-sys-space-5xl: 72px;
+  --ba-sys-space-6xl: 96px;
+}
+
+/* .space-small {
+  padding: var(--ba-sys-space-s);
+} */

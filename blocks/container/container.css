@@ -1,9 +1,9 @@
 :root {
   /* Container size variables */
   --ba-container-size-full: 100%;
-  --ba-container-size-m: 1144px;
-  --ba-container-size-s: 880px;
-  --ba-container-size-xs: 560px;
+  --ba-container-size-medium: 1144px;
+  --ba-container-size-small: 880px;
+  --ba-container-size-extra-small: 560px;
 }
 
 .container {
@@ -20,13 +20,13 @@
 }
 
 .container_size_m {
-  max-width: var(--ba-container-size-m);
+  max-width: var(--ba-container-size-medium);
 }
 
 .container_size_s {
-  max-width: var(--ba-container-size-s);
+  max-width: var(--ba-container-size-small);
 }
 
 .container_size_xs {
-  max-width: var(--ba-container-size-xs);
+  max-width: var(--ba-container-size-extra-small);
 }

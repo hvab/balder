@@ -1,0 +1,167 @@
+{% extends "templates/page.html" %}
+
+{% block page__content %}
+<div class="content">
+  <h1>h1. Heading</h1>
+  <h2>h2. Heading</h2>
+  <h3>h3. Heading</h3>
+  <h4>h4. Heading</h4>
+  <h5>h5. Heading</h5>
+  <h6>h6. Heading</h6>
+
+  <hr>
+
+  <h1>h1. Heading</h1>
+
+  <p>
+    This is a paragraph with <strong>strong text</strong>, <em>emphasized text</em>, and <small>small text</small>.
+    You can also use the <mark>mark</mark> tag to highlight text.
+  </p>
+
+  <h2>h2. Heading</h2>
+
+  <p>
+    <del>This text is meant to be treated as deleted text.</del>
+    <s>This text is no longer accurate.</s>
+    <ins>This text is an addition to the document.</ins>
+    <u>This text will render as underlined.</u>
+  </p>
+
+  <h3>h3. Heading</h3>
+
+  <p>
+    Superscript: E = mc<sup>2</sup><br>
+    Subscript: H<sub>2</sub>O
+  </p>
+
+  <h4>h4. Heading</h4>
+
+  <p>
+    Here's an abbreviation: <abbr title="HyperText Markup Language">HTML</abbr> and an initialism: <abbr title="Cascading Style Sheets" class="initialism">CSS</abbr>.
+  </p>
+
+  <h5>h5. Heading</h5>
+
+  <p>
+    A quote example: <q>To be or not to be, that is the question.</q>
+  </p>
+  <blockquote>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+    </p>
+    <footer>
+      Someone famous in <cite title="Source Title">Source Title</cite>
+    </footer>
+  </blockquote>
+
+  <h6>h6. Heading</h6>
+
+  <p>
+    Variable example: The value of <var>x</var> is 42.
+  </p>
+
+  <p>
+    Sample output: <samp>Error: Invalid input.</samp>
+  </p>
+
+  <p>
+    Keyboard input example: Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.
+  </p>
+
+  <pre>
+    <code>
+      // Sample code block
+      function helloWorld() {
+        console.log('Hello, world!');
+      }
+    </code>
+  </pre>
+
+  <p>
+    Here's some <b>bold text</b> and some <i>italic text</i> using deprecated tags.
+  </p>
+
+  <p>
+    Highlighted text using <bdo dir="rtl">This text will go right to left.</bdo>
+  </p>
+
+  <p>
+    Definition term: <dfn title="Definition Term">Defining</dfn> a word within the content.
+  </p>
+
+  <ul>
+    <li>Unordered list item one</li>
+    <li>Unordered list item two
+      <ul>
+        <li>Nested unordered list item</li>
+      </ul>
+    </li>
+    <li>Unordered list item three</li>
+  </ul>
+
+  <ol>
+    <li>Ordered list item one</li>
+    <li>Ordered list item two
+      <ol>
+        <li>Nested ordered list item</li>
+      </ol>
+    </li>
+    <li>Ordered list item three</li>
+  </ol>
+
+  <dl>
+    <dt>Description List Title</dt>
+    <dd>A description list is perfect for defining terms.</dd>
+    <dt>Another Term</dt>
+    <dd>Another description.</dd>
+    <dt>Nesting</dt>
+    <dd>
+      <dl>
+        <dt>Nested Definition List</dt>
+        <dd>Nested description goes here.</dd>
+      </dl>
+    </dd>
+  </dl>
+
+  <address>
+    <strong>Company Name</strong><br>
+    1234 Street Rd.<br>
+    Suite 5678<br>
+    City, State 12345<br>
+    <abbr title="Phone">P:</abbr> (123) 456-7890
+  </address>
+
+  <address>
+    <strong>John Doe</strong><br>
+    <a href="mailto:john.doe@example.com">john.doe@example.com</a>
+  </address>
+
+  <details>
+    <summary>Details Summary</summary>
+    <p>Additional details go here.</p>
+  </details>
+
+  <details open>
+    <summary>Open Details Summary</summary>
+    <p>Here are more details that are visible by default.</p>
+  </details>
+
+  <p>
+    Ruby annotation example: <ruby>漢<rt>hàn</rt></ruby><ruby>字<rt>zì</rt></ruby>
+  </p>
+
+  <hr>
+
+  <p>
+    Sample text with mathematical expressions: The quadratic formula is <code>x = [-b ± √(b² - 4ac)] / (2a)</code>.
+  </p>
+  <p>
+    Text with <code>&lt;code&gt;</code> tags to display inline code.
+  </p>
+
+  <p>
+    Responsive design is essential. Images should adjust to various screen sizes, like the one below:
+  </p>
+  <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3Crect%20width='20'%20height='20'%20fill='%23007BFF'%20/%3E%3C/svg%3E" alt="Blue Square">
+</div>
+{% endblock page__content %}

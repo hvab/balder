@@ -1,8 +1,12 @@
-:root {
-  --ba-ref-typeface-brand: "Open Sans";
-  --ba-ref-typeface-plain: system-ui;
+html {
+  /* Prevent adjustments of font size after orientation changes in iOS */
+  text-size-adjust: 100%;
+
+  /* Use a more readable tab size (opinionated) */
+  tab-size: 4;
 }
 
-.page {
+body {
+  /* Remove the margin in all browsers. */
   margin: 0;
 }
