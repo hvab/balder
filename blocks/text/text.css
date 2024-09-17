@@ -1,0 +1,213 @@
+/* Align */
+.text_align_center {
+  text-align: center;
+}
+
+.text_align_left {
+  text-align: left;
+}
+
+.text_align_right {
+  text-align: right;
+}
+
+/* Decoration */
+.text_decoration_underline {
+  text-decoration: underline;
+}
+
+.text_decoration_none {
+  text-decoration: none;
+}
+
+/* Only display content to screen readers. See: http://a11yproject.com/posts/how-to-hide-content */
+.text_sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Label Small */
+.text_type_label-small {
+  font-family: var(--ba-sys-typescale-label-small-font);
+  font-size: var(--ba-sys-typescale-label-small-size);
+  font-style: var(--ba-sys-typescale-label-small-font-style);
+  font-weight: var(--ba-sys-typescale-label-small-weight);
+  line-height: var(--ba-sys-typescale-label-small-line-height);
+  text-decoration: var(--ba-sys-typescale-label-small-text-decoration);
+  text-transform: var(--ba-sys-typescale-label-small-text-transform);
+  letter-spacing: var(--ba-sys-typescale-label-small-tracking);
+}
+
+/* Label Medium */
+.text_type_label-medium {
+  font-family: var(--ba-sys-typescale-label-medium-font);
+  font-size: var(--ba-sys-typescale-label-medium-size);
+  font-style: var(--ba-sys-typescale-label-medium-font-style);
+  font-weight: var(--ba-sys-typescale-label-medium-weight);
+  line-height: var(--ba-sys-typescale-label-medium-line-height);
+  text-decoration: var(--ba-sys-typescale-label-medium-text-decoration);
+  text-transform: var(--ba-sys-typescale-label-medium-text-transform);
+  letter-spacing: var(--ba-sys-typescale-label-medium-tracking);
+}
+
+/* Label Large */
+.text_type_label-large {
+  font-family: var(--ba-sys-typescale-label-large-font);
+  font-size: var(--ba-sys-typescale-label-large-size);
+  font-style: var(--ba-sys-typescale-label-large-font-style);
+  font-weight: var(--ba-sys-typescale-label-large-weight);
+  line-height: var(--ba-sys-typescale-label-large-line-height);
+  text-decoration: var(--ba-sys-typescale-label-large-text-decoration);
+  text-transform: var(--ba-sys-typescale-label-large-text-transform);
+  letter-spacing: var(--ba-sys-typescale-label-large-tracking);
+}
+
+/* Body Small */
+.text_type_body-small {
+  font-family: var(--ba-sys-typescale-body-small-font);
+  font-size: var(--ba-sys-typescale-body-small-size);
+  font-style: var(--ba-sys-typescale-body-small-font-style);
+  font-weight: var(--ba-sys-typescale-body-small-weight);
+  line-height: var(--ba-sys-typescale-body-small-line-height);
+  text-decoration: var(--ba-sys-typescale-body-small-text-decoration);
+  text-transform: var(--ba-sys-typescale-body-small-text-transform);
+  letter-spacing: var(--ba-sys-typescale-body-small-tracking);
+}
+
+/* Body Medium */
+.text_type_body-medium {
+  font-family: var(--ba-sys-typescale-body-medium-font);
+  font-size: var(--ba-sys-typescale-body-medium-size);
+  font-style: var(--ba-sys-typescale-body-medium-font-style);
+  font-weight: var(--ba-sys-typescale-body-medium-weight);
+  line-height: var(--ba-sys-typescale-body-medium-line-height);
+  text-decoration: var(--ba-sys-typescale-body-medium-text-decoration);
+  text-transform: var(--ba-sys-typescale-body-medium-text-transform);
+  letter-spacing: var(--ba-sys-typescale-body-medium-tracking);
+}
+
+/* Body Large */
+.text_type_body-large {
+  font-family: var(--ba-sys-typescale-body-large-font);
+  font-size: var(--ba-sys-typescale-body-large-size);
+  font-style: var(--ba-sys-typescale-body-large-font-style);
+  font-weight: var(--ba-sys-typescale-body-large-weight);
+  line-height: var(--ba-sys-typescale-body-large-line-height);
+  text-decoration: var(--ba-sys-typescale-body-large-text-decoration);
+  text-transform: var(--ba-sys-typescale-body-large-text-transform);
+  letter-spacing: var(--ba-sys-typescale-body-large-tracking);
+}
+
+/* Title Small */
+.text_type_title-small {
+  font-family: var(--ba-sys-typescale-title-small-font);
+  font-size: var(--ba-sys-typescale-title-small-size);
+  font-style: var(--ba-sys-typescale-title-small-font-style);
+  font-weight: var(--ba-sys-typescale-title-small-weight);
+  line-height: var(--ba-sys-typescale-title-small-line-height);
+  text-decoration: var(--ba-sys-typescale-title-small-text-decoration);
+  text-transform: var(--ba-sys-typescale-title-small-text-transform);
+  letter-spacing: var(--ba-sys-typescale-title-small-tracking);
+}
+
+/* Title Medium */
+.text_type_title-medium {
+  font-family: var(--ba-sys-typescale-title-medium-font);
+  font-size: var(--ba-sys-typescale-title-medium-size);
+  font-style: var(--ba-sys-typescale-title-medium-font-style);
+  font-weight: var(--ba-sys-typescale-title-medium-weight);
+  line-height: var(--ba-sys-typescale-title-medium-line-height);
+  text-decoration: var(--ba-sys-typescale-title-medium-text-decoration);
+  text-transform: var(--ba-sys-typescale-title-medium-text-transform);
+  letter-spacing: var(--ba-sys-typescale-title-medium-tracking);
+}
+
+/* Title Large */
+.text_type_title-large {
+  font-family: var(--ba-sys-typescale-title-large-font);
+  font-size: var(--ba-sys-typescale-title-large-size);
+  font-style: var(--ba-sys-typescale-title-large-font-style);
+  font-weight: var(--ba-sys-typescale-title-large-weight);
+  line-height: var(--ba-sys-typescale-title-large-line-height);
+  text-decoration: var(--ba-sys-typescale-title-large-text-decoration);
+  text-transform: var(--ba-sys-typescale-title-large-text-transform);
+  letter-spacing: var(--ba-sys-typescale-title-large-tracking);
+}
+
+/* Headline Small */
+.text_type_headline-small {
+  font-family: var(--ba-sys-typescale-headline-small-font);
+  font-size: var(--ba-sys-typescale-headline-small-size);
+  font-style: var(--ba-sys-typescale-headline-small-font-style);
+  font-weight: var(--ba-sys-typescale-headline-small-weight);
+  line-height: var(--ba-sys-typescale-headline-small-line-height);
+  text-decoration: var(--ba-sys-typescale-headline-small-text-decoration);
+  text-transform: var(--ba-sys-typescale-headline-small-text-transform);
+  letter-spacing: var(--ba-sys-typescale-headline-small-tracking);
+}
+
+/* Headline Medium */
+.text_type_headline-medium {
+  font-family: var(--ba-sys-typescale-headline-medium-font);
+  font-size: var(--ba-sys-typescale-headline-medium-size);
+  font-style: var(--ba-sys-typescale-headline-medium-font-style);
+  font-weight: var(--ba-sys-typescale-headline-medium-weight);
+  line-height: var(--ba-sys-typescale-headline-medium-line-height);
+  text-decoration: var(--ba-sys-typescale-headline-medium-text-decoration);
+  text-transform: var(--ba-sys-typescale-headline-medium-text-transform);
+  letter-spacing: var(--ba-sys-typescale-headline-medium-tracking);
+}
+
+/* Headline Large */
+.text_type_headline-large {
+  font-family: var(--ba-sys-typescale-headline-large-font);
+  font-size: var(--ba-sys-typescale-headline-large-size);
+  font-style: var(--ba-sys-typescale-headline-large-font-style);
+  font-weight: var(--ba-sys-typescale-headline-large-weight);
+  line-height: var(--ba-sys-typescale-headline-large-line-height);
+  text-decoration: var(--ba-sys-typescale-headline-large-text-decoration);
+  text-transform: var(--ba-sys-typescale-headline-large-text-transform);
+  letter-spacing: var(--ba-sys-typescale-headline-large-tracking);
+}
+
+/* Display Small */
+.text_type_display-small {
+  font-family: var(--ba-sys-typescale-display-small-font);
+  font-size: var(--ba-sys-typescale-display-small-size);
+  font-style: var(--ba-sys-typescale-display-small-font-style);
+  font-weight: var(--ba-sys-typescale-display-small-weight);
+  line-height: var(--ba-sys-typescale-display-small-line-height);
+  text-decoration: var(--ba-sys-typescale-display-small-text-decoration);
+  text-transform: var(--ba-sys-typescale-display-small-text-transform);
+  letter-spacing: var(--ba-sys-typescale-display-small-tracking);
+}
+
+/* Display Medium */
+.text_type_display-medium {
+  font-family: var(--ba-sys-typescale-display-medium-font);
+  font-size: var(--ba-sys-typescale-display-medium-size);
+  font-style: var(--ba-sys-typescale-display-medium-font-style);
+  font-weight: var(--ba-sys-typescale-display-medium-weight);
+  line-height: var(--ba-sys-typescale-display-medium-line-height);
+  text-decoration: var(--ba-sys-typescale-display-medium-text-decoration);
+  text-transform: var(--ba-sys-typescale-display-medium-text-transform);
+  letter-spacing: var(--ba-sys-typescale-display-medium-tracking);
+}
+
+/* Display Large */
+.text_type_display-large {
+  font-family: var(--ba-sys-typescale-display-large-font);
+  font-size: var(--ba-sys-typescale-display-large-size);
+  font-style: var(--ba-sys-typescale-display-large-font-style);
+  font-weight: var(--ba-sys-typescale-display-large-weight);
+  line-height: var(--ba-sys-typescale-display-large-line-height);
+  text-decoration: var(--ba-sys-typescale-display-large-text-decoration);
+  text-transform: var(--ba-sys-typescale-display-large-text-transform);
+  letter-spacing: var(--ba-sys-typescale-display-large-tracking);
+}
