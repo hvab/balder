@@ -1,4 +1,4 @@
-.theme_typescale_default {
+:root {
   /* Typeface */
   --ba-ref-typeface-plain: system-ui;
   --ba-ref-typeface-brand: system-ui;
@@ -169,7 +169,9 @@
   --ba-sys-typescale-display-large-weight: var(
     --ba-ref-typeface-weight-regular
   );
+}
 
+.theme_typescale_default {
   font-family: var(--ba-sys-typescale-body-large-font);
   font-size: var(--ba-sys-typescale-body-large-size);
   line-height: var(--ba-sys-typescale-body-large-line-height);

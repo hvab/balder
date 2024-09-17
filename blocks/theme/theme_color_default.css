@@ -1,6 +1,6 @@
 @import url("palette.css");
 
-.theme_color_default {
+:root {
   /* Primary */
   --ba-sys-color-primary: var(--ba-ref-palette-primary40);
   --ba-sys-color-primary-container: var(--ba-ref-palette-primary90);
@@ -40,7 +40,9 @@
   --ba-sys-color-error-container: var(--ba-ref-palette-error90);
   --ba-sys-color-on-error: var(--ba-ref-palette-error100);
   --ba-sys-color-on-error-container: var(--ba-ref-palette-error10);
+}
 
+.theme_color_default {
   color: var(--ba-sys-color-on-surface);
   background-color: var(--ba-sys-color-surface);
 }
